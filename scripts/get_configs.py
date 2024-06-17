@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-import asyncio
-import os
-from infrahub_sdk import InfrahubClient
-=======
 import os, argparse, subprocess
 from infrahub_sdk import InfrahubClientSync
->>>>>>> ab28768 (add option to pull tests)
 
 
 async def get_containerlab_topology():
@@ -13,7 +7,7 @@ async def get_containerlab_topology():
     if not os.path.exists(directory_path):
         os.makedirs(directory_path)
 
-    client = InfrahubClient()
+    client = InfrahubClientSync()
     topologies = await client.all(kind="TopologyTopology")
 
     for topology in topologies:
@@ -27,7 +21,7 @@ async def get_device_configs():
     if not os.path.exists(directory_path):
         os.makedirs(directory_path)
 
-    client = InfrahubClient()
+    client = InfrahubClientSync()
     devices = await client.all(kind="InfraDevice")
 
     for device in devices:
@@ -39,10 +33,6 @@ async def get_device_configs():
                     file.write(artifact)
 
 
-<<<<<<< HEAD
-asyncio.run(get_containerlab_topology())
-asyncio.run(get_device_configs())
-=======
 def get_nuts_tests():
     directory_path = "./generated-configs/clab/nuts/tests"
     if not os.path.exists(directory_path):
@@ -106,4 +96,3 @@ def main():
 
 if __name__ == "__main__":
     main()
->>>>>>> ab28768 (add option to pull tests)
