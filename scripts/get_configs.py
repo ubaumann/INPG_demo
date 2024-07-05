@@ -11,8 +11,8 @@ async def get_containerlab_topology():
     topologies = await client.all(kind="TopologyTopology")
 
     for topology in topologies:
-        artifact = await topology.artifact_fetch("containerlab-topology")
-        with open(f"{directory_path}/{topology.name.value}.yml", "w") as file:
+        artifact = topology.artifact_fetch("NUTS Containerlab Topology")
+        with open(f'{directory_path}/{topology.name.value}.yml', 'w') as file:
             file.write(artifact)
 
 
