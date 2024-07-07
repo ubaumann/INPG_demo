@@ -19,3 +19,5 @@ playbooks/documentation
 playbooks/intended
 playbooks/reports
 pyrightconfig.json
+generated-configs/
+nuts/tests/
