@@ -33,7 +33,8 @@
     "LINUX_HOST_DOCKER_IMAGE": "registry.opsmill.io/external/alpine-host:v3.1.1"
   },
   "forwardPorts": [
-    8000
+    8000,
+    3000
   ],
   "runArgs": [
     "--volume=/var/lib/docker",
