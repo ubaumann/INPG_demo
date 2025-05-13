@@ -25,7 +25,7 @@ poetry install --no-interaction --no-ansi --no-root
 ### Start Infrahub
 
 ```shell
-poetry run inv start
+poetry run invoke start
 ```
 
 ### Load schema and data into Infrahub
@@ -38,7 +38,7 @@ This will create :
 - Security data (Policies, rules, objects)
 
 ```shell
-poetry run inv load-schema load-data
+poetry run invoke load-schema load-data
 ```
 
 ## Demo
