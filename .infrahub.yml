@@ -158,8 +158,8 @@ queries:
   - name: generate_network_services
     file_path: "generators/network_services.gql"
 
-  # - name: nuts_vrf_test
-  #   file_path: "nuts/nuts_vrf_test.gql"
+  - name: nuts_vrf_test
+    file_path: "nuts/nuts_vrf_test.gql"
 
   # - name: nuts_bgp_test
   #   file_path: "nuts/nuts_bgp_test.gql"
