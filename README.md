@@ -47,6 +47,7 @@ poetry run invoke load-schema load-data
 
 > [!NOTE]
 > Reference the [Infrahub documentation](https://docs.infrahub.app/guides/repository) for the multiple ways this can be done.
+> Public repositories do not need credentials for read-only.
 
 ```graphql
 mutation AddCredential {
