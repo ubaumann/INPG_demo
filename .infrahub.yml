@@ -19,25 +19,25 @@ jinja2_transforms:
     query: "topology_info"
     template_path: "topology/clab_topology.j2"
 
-  # - name: "nuts_clab_topology"
-  #   query: "topology_info"
-  #   template_path: "nuts/clab_topology.j2"
+  - name: "nuts_clab_topology"
+    query: "topology_info"
+    template_path: "nuts/clab_topology.j2"
 
-  # - name: "nuts_interface_test"
-  #   query: "nuts_interface_test"
-  #   template_path: "nuts/nuts_interface_test.j2"
+  - name: "nuts_interface_test"
+    query: "nuts_interface_test"
+    template_path: "nuts/nuts_interface_test.j2"
 
-  # - name: "nuts_bgp_test"
-  #   query: "nuts_bgp_test"
-  #   template_path: "nuts/nuts_bgp_test.j2"
+  - name: "nuts_bgp_test"
+    query: "nuts_bgp_test"
+    template_path: "nuts/nuts_bgp_test.j2"
 
-  # - name: "nuts_config_test"
-  #   query: "nuts_config_test"
-  #   template_path: "nuts/nuts_config_test.j2"
+  - name: "nuts_config_test"
+    query: "nuts_config_test"
+    template_path: "nuts/nuts_config_test.j2"
 
-  # - name: "nuts_vrf_test"
-  #   query: "nuts_vrf_test"
-  #   template_path: "nuts/nuts_vrf_test.j2"
+  - name: "nuts_vrf_test"
+    query: "nuts_vrf_test"
+    template_path: "nuts/nuts_vrf_test.j2"
 
 artifact_definitions:
   - name: "Openconfig Interface for Arista devices"
