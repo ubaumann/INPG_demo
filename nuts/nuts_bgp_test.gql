@@ -31,7 +31,6 @@ query device_info($device: String!) {
                   name {
                     value
                   }
-                  
                 }
               }
             }

@@ -161,8 +161,8 @@ queries:
   - name: nuts_vrf_test
     file_path: "nuts/nuts_vrf_test.gql"
 
-  # - name: nuts_bgp_test
-  #   file_path: "nuts/nuts_bgp_test.gql"
+  - name: nuts_bgp_test
+    file_path: "nuts/nuts_bgp_test.gql"
 
   # - name: nuts_config_test
   #   file_path: "nuts/nuts_config_test.gql"
