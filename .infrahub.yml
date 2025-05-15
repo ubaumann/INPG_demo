@@ -167,5 +167,5 @@ queries:
   - name: nuts_config_test
     file_path: "nuts/nuts_config_test.gql"
 
-  # - name: nuts_interface_test
-  #   file_path: "nuts/nuts_interface_test.gql"
+  - name: nuts_interface_test
+    file_path: "nuts/nuts_interface_test.gql"
