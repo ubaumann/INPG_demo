@@ -2,33 +2,33 @@ import os, argparse, subprocess
 from infrahub_sdk import InfrahubClientSync
 
 
-async def get_containerlab_topology():
+def get_containerlab_topology():
     directory_path = "./generated-configs/clab"
     if not os.path.exists(directory_path):
         os.makedirs(directory_path)
 
     client = InfrahubClientSync()
-    topologies = await client.all(kind="TopologyTopology")
+    topologies = client.all(kind="TopologyTopology")
 
     for topology in topologies:
-        artifact = topology.artifact_fetch("NUTS Containerlab Topology")
+        artifact = topology.artifact_fetch("nuts-containerlab-topology")
         with open(f'{directory_path}/{topology.name.value}.yml', 'w') as file:
             file.write(artifact)
 
 
-async def get_device_configs():
+def get_device_configs():
     directory_path = "./generated-configs/clab/configs/startup"
     if not os.path.exists(directory_path):
         os.makedirs(directory_path)
 
     client = InfrahubClientSync()
-    devices = await client.all(kind="InfraDevice")
+    devices = client.all(kind="InfraDevice")
 
     for device in devices:
-        await device.artifacts.fetch()
+        device.artifacts.fetch()
         for artifact in device.artifacts.peers:
             if str(artifact.display_label) == "startup-config":
-                artifact = await device.artifact_fetch(artifact.display_label)
+                artifact = device.artifact_fetch(artifact.display_label)
                 with open(f"{directory_path}/{device.name.value}.cfg", "w") as file:
                     file.write(artifact)
 
@@ -38,7 +38,7 @@ def get_nuts_tests():
     if not os.path.exists(directory_path):
         os.makedirs(directory_path)
 
-    client = InfrahubClientSync.init()
+    client = InfrahubClientSync()
     devices = client.all(kind="InfraDevice")
 
     for device in devices:
