@@ -64,37 +64,37 @@ artifact_definitions:
     targets: "arista_devices"
     transformation: "device_arista"
 
-  # - name: "NUTS tests Interface for Arista devices"
-  #   artifact_name: "nuts_interface"
-  #   parameters:
-  #     device: "name__value"
-  #   content_type: "text/plain"
-  #   targets: "arista_devices"
-  #   transformation: "nuts_interface_test"
+  - name: "NUTS tests Interface for Arista devices"
+    artifact_name: "nuts_interface"
+    parameters:
+      device: "name__value"
+    content_type: "text/plain"
+    targets: "arista_devices"
+    transformation: "nuts_interface_test"
 
-  # - name: "NUTS tests BGP for Arista devices"
-  #   artifact_name: "nuts_bgp"
-  #   parameters:
-  #     device: "name__value"
-  #   content_type: "text/plain"
-  #   targets: "arista_devices"
-  #   transformation: "nuts_bgp_test"
+  - name: "NUTS tests BGP for Arista devices"
+    artifact_name: "nuts_bgp"
+    parameters:
+      device: "name__value"
+    content_type: "text/plain"
+    targets: "arista_devices"
+    transformation: "nuts_bgp_test"
 
-  # - name: "NUTS tests Config for Arista devices"
-  #   artifact_name: "nuts_config"
-  #   parameters:
-  #     device: "name__value"
-  #   content_type: "text/plain"
-  #   targets: "arista_devices"
-  #   transformation: "nuts_config_test"
+  - name: "NUTS tests Config for Arista devices"
+    artifact_name: "nuts_config"
+    parameters:
+      device: "name__value"
+    content_type: "text/plain"
+    targets: "arista_devices"
+    transformation: "nuts_config_test"
 
-  # - name: "NUTS tests VRF for Arista devices"
-  #   artifact_name: "nuts_vrf"
-  #   parameters:
-  #     device: "name__value"
-  #   content_type: "text/plain"
-  #   targets: "arista_devices"
-  #   transformation: "nuts_vrf_test"
+  - name: "NUTS tests VRF for Arista devices"
+    artifact_name: "nuts_vrf"
+    parameters:
+      device: "name__value"
+    content_type: "text/plain"
+    targets: "arista_devices"
+    transformation: "nuts_vrf_test"
 
   - name: "Firewall config"
     artifact_name: "firewall-config"
@@ -112,13 +112,13 @@ artifact_definitions:
     targets: "all_topologies"
     transformation: "clab_topology"
 
-  # - name: "NUTS Containerlab Topology"
-  #   artifact_name: "nuts-containerlab-topology"
-  #   parameters:
-  #     topology_name: "name__value"
-  #   content_type: "text/plain"
-  #   targets: "all_topologies"
-  #   transformation: "nuts_clab_topology"
+  - name: "NUTS Containerlab Topology"
+    artifact_name: "nuts-containerlab-topology"
+    parameters:
+      topology_name: "name__value"
+    content_type: "text/plain"
+    targets: "all_topologies"
+    transformation: "nuts_clab_topology"
 
 check_definitions:
   - name: "check_device_topology"
