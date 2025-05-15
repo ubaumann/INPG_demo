@@ -90,7 +90,7 @@ mutation AddRepository{
 > The example below creates the topology fra05-pod1
 
 ```shell
-poetry run infrahubctl run generators/generate_topology.py topology=fra05-pod1
+poetry run infrahubctl run bootstrap/generate_topology.py topology=fra05-pod1
 ```
 
 ### 3. Generate a network service in a Topology
