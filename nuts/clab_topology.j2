@@ -1,4 +1,4 @@
-name: avdasymirb
+name: demo-dc-fabric
 
 topology:
   kinds:
@@ -71,6 +71,7 @@ topology:
         ["nuts:eth1", "inpg_demo-infrahub-server-1:eth1"]
 
 mgmt:
-  network: ceos_clab
-  ipv4-gw: 10.0.0.254
+  network: mgmt_network
   ipv4-subnet: 10.0.0.0/24
+  ipv4-gw: 10.0.0.254
+  ipv6-subnet: 2001:172:16::/80
