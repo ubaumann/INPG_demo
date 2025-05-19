@@ -93,28 +93,13 @@ mutation AddRepository{
 poetry run infrahubctl run bootstrap/generate_topology.py topology=fra05-pod1
 ```
 
-### 3. Generate a network service in a Topology
 
-> [!NOTE]
-> The example below creates the Layer2 network service and a another Layer3 on topology fra05-pod1
+### 3. Render Artifacts
 
-```shell
-poetry run infrahubctl run generators/generate_network-services.py topology=fra05-pod1 type=layer2
-poetry run infrahubctl run generators/generate_network-services.py topology=fra05-pod1 type=layer3 vrf=production
-```
+Use the Infrahub UI to inspect the artifact on Topology and Device objects.
 
-### 4. Render Artifacts
 
-Artifact Generation is not currently present in the UI but it's possible to try it out locally :
-
-> [!NOTE]
-> This command will render the artifact define with `device_arista` Transformation, for `fra05-pod1-leaf1` device
-
-```shell
-poetry run infrahubctl render device_arista device=fra05-pod1-leaf1
-```
-
-### 5. Deploy your environment to containerlabs
+### 4. Deploy your environment to containerlabs
 
 The containerlab generator automatically generates a containerlab topology artifact for every topology. Every device has its startup config as an artifact.
 
@@ -127,7 +112,7 @@ poetry run python3 scripts/get_configs.py -n -c -d
 sudo -E containerlab deploy -t ./generated-configs/clab/fra05-pod1.yml --reconfigure
 ```
 
-### 6. Start Prometheus and Grafana
+### 5. Start Prometheus and Grafana
 
 NUTS can be run independently, however if visualization is desired it can be run with the `--metrics` flag and it will be sent to grafana.
 
@@ -137,12 +122,12 @@ docker compose up -d
 cd -
 ```
 
-### 7. Use NUTS to test the environment
+### 6. Use NUTS to test the environment
 
-The NUTS test client in the containerlab is set up to be ready for test execution. Tests where pulled in step 12. with `get_config.py`.
+The NUTS test client in the containerlab is set up to be ready for test execution. Tests where pulled in step 4. with `get_config.py`.
 
 ```shell
-# Set the variables if you want to change the target, set by default
+# Set the variables in the nuts container if you want to change the target, set by default
 export PROMETHEUS_PUSHGATEWAY_URL="http://prom-pushgateway:9091"
 export PROMETHEUS_PUSHGATEWAY_JOB="nuts"
 ```
