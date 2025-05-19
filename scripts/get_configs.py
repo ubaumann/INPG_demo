@@ -44,7 +44,7 @@ def get_nuts_tests():
     for device in devices:
         device.artifacts.fetch()
         for artifact in device.artifacts.peers:
-            if (str(artifact.display_label).startswith("NUTS tests")):
+            if (str(artifact.display_label).startswith("nuts_")):
                 artifact = device.artifact_fetch(artifact.display_label)
                 with open(f'{directory_path}/test_{device.name.value}.yaml', 'a') as file:
                     file.write(artifact)
