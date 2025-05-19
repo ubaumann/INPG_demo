@@ -4,7 +4,7 @@ services:
     ports:
       - 9091:9091
     networks:
-      - ceos_clab
+      - mgmt_network
 
   prometheus:
     image: prom/prometheus
@@ -16,7 +16,7 @@ services:
     ports:
       - 9090:9090
     networks:
-      - ceos_clab
+      - mgmt_network
 
   grafana:
     image: grafana/grafana
@@ -31,8 +31,8 @@ services:
       - GF_USERS_ALLOW_SIGN_UP=false
       - GF_INSTALL_PLUGINS=aceiot-svg-panel
     networks:
-      - ceos_clab
+      - mgmt_network
 
 networks:
-  ceos_clab:
+  mgmt_network:
     external: true
