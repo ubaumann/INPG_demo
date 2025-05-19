@@ -126,11 +126,13 @@ cd -
 
 The NUTS test client in the containerlab is set up to be ready for test execution. Tests where pulled in step 4. with `get_config.py`.
 
-```shell
-# Set the variables in the nuts container if you want to change the target, set by default
-export PROMETHEUS_PUSHGATEWAY_URL="http://prom-pushgateway:9091"
-export PROMETHEUS_PUSHGATEWAY_JOB="nuts"
-```
+> [!NOTE]
+> By default, the metrics are sent to the prometheus pushgateway from the dokcer-compose.yml
+> ```shell
+> # Set the variables in the nuts container if you want to change the target
+> export PROMETHEUS_PUSHGATEWAY_URL="http://prom-pushgateway:9091"
+> export PROMETHEUS_PUSHGATEWAY_JOB="nuts"
+> ```
 
 ```shell
 # Enter the container
