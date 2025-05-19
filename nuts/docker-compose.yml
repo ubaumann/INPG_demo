@@ -1,13 +1,13 @@
 services:
   prom-pushgateway:
-    image: prom/pushgateway
+    image: prom/pushgateway:v1.11.1
     ports:
       - 9091:9091
     networks:
       - mgmt_network
 
   prometheus:
-    image: prom/prometheus
+    image: prom/prometheus:v3.4.0
     volumes:
       - ./monitoring/prometheus:/etc/prometheus:ro
     command:
@@ -19,7 +19,7 @@ services:
       - mgmt_network
 
   grafana:
-    image: grafana/grafana
+    image: grafana/grafana:12.0.0
     depends_on:
       - prometheus
     ports:
