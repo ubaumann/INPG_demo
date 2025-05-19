@@ -149,7 +149,7 @@ export PROMETHEUS_PUSHGATEWAY_JOB="nuts"
 
 ```shell
 # Enter the container
-docker exec -it clab-avdasymirb-nuts bash
+docker exec -it clab-demo-dc-fabric-nuts bash
 
 # Execute all generated tests for fra05-pod1
 pytest tests/test_fra05-pod1-* --metrics
