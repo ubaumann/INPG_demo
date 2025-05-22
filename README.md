@@ -110,6 +110,9 @@ poetry run python3 scripts/get_configs.py -n -c -d
 
 # Start the containerlab
 sudo -E containerlab deploy -t ./generated-configs/clab/fra05-pod1.yml --reconfigure
+
+# Set the IP address on the interface connecting infrahub server with the nuts container
+docker exec --privileged inpg_demo-infrahub-server-1 ip address add 172.20.0.2/16 dev eth1
 ```
 
 ### 5. Start Prometheus and Grafana

@@ -47,7 +47,7 @@ topology:
       exec:
         - apt update
         - apt install iproute2 -y
-        - ip address add 172.20.0.2/16 dev eth1  # docker exec --privileged inpg_demo-infrahub-server-1 ip address add 172.20.0.2/16 dev eth1
+        # - ip address add 172.20.0.2/16 dev eth1  # docker exec --privileged inpg_demo-infrahub-server-1 ip address add 172.20.0.2/16 dev eth1
 
   links:
 {% set processed_endpoints = [] %}
